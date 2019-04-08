@@ -1,10 +1,13 @@
-const Router = require('express').Router();
+const Router = require("express").Router();
 
 /** Import Controllers */
-const User = require('../controllers/User.controller')
+const User = require("../controllers/User.controller");
 
-Router.route('/')
+/** Import Middleware for validation data */
+const { validations, schemaValidations } = require("../middleware/validation");
+
+Router.route("/")
   .get(User.index)
-
+  .post(validations(schemaValidations), User.create);
 
 module.exports = Router;
