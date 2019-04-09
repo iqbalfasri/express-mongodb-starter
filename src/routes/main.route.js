@@ -8,6 +8,6 @@ const { validations, schemaValidations } = require("../middleware/validation");
 
 Router.route("/")
   .get(User.index)
-  .post(validations(schemaValidations), User.create);
+  .post(validations(schemaValidations.users), User.create);
 
 module.exports = Router;
