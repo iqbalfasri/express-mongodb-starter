@@ -5,7 +5,7 @@ require("dotenv").config();
 require("./src/lib/database").connect();
 
 /** Import Routes */
-const UserRoute = require("./src/routes/main.route");
+const UserRoute = require('./src/routes/User.route');
 
 /** Initialize App */
 const app = express();
